@@ -40,7 +40,6 @@ export default () => {
     const result = list.findIndex(i => i.id === taskId);
     if (list[result].done === false) {list[result].done = true}
     else {list[result].done = false};
-    console.log(list[result])
   }
 
   return (

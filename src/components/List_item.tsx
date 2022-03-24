@@ -17,7 +17,8 @@ background-color: #20212C;
 padding: 10px;
 border-radius: 10px;
 margin-bottom: 10px;
-align-item: center;`
+align-item: center;
+position: relative`
 
 const Input_1a = styled.input`
 width: 20px;
