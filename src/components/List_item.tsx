@@ -3,10 +3,11 @@ import styled from 'styled-components';
 import {Item} from '../types/Item'
 
 type Props = {
-  item: Item
+  item: Item;
+  onCheck: (taskId: number) => void
 }
 
-type Container_1aProps = {
+type Label_1aProps = {
   done: boolean;
 }
 
@@ -24,18 +25,23 @@ height: 20px;
 margin-right: 10px;
 cursor: pointer`
 
-const Label_1a = styled.div(({done}: Container_1aProps)=>(
+const Label_1a = styled.div(({done}: Label_1aProps)=>(
 `
 color: #ccc;
 text-decoration: ${done ? 'line-through' : 'initial'}
 `
 ));
 
-export default ({item}: Props) => {
+export default ({item, onCheck}: Props) => {
   const [isChecked, setIsChecked] = useState(item.done);
+
   return (
     <Container_1a>
-      <Input_1a type="checkbox" checked={isChecked} onChange={e => setIsChecked(e.target.checked)}/>
+      <Input_1a
+      type="checkbox"
+      checked={isChecked}
+      onChange={e => setIsChecked(e.target.checked)}
+      onClick={() => onCheck(item.id)}/>
       <Label_1a done={isChecked}>{item.name}</Label_1a>
     </Container_1a>
   );

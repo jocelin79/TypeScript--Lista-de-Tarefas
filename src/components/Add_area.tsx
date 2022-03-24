@@ -1,3 +1,4 @@
+import {useState, KeyboardEvent} from 'react'
 import styled from 'styled-components'
 
 const Container_1a = styled.div`
@@ -19,7 +20,18 @@ color: #fff;
 font-size: 18px;
 flex: 1`
 
-export default () => {
+type Props = {
+  onEnter: (taskName: string) => void
+}
+
+export default ({onEnter}: Props) => {
+  const [inputText, setInputText] = useState('')
+
+  const handleKeyUp = (e: KeyboardEvent) => {if(e.code === 'Enter' && inputText !== '') {
+    onEnter(inputText);
+    setInputText('');
+  }}
+
   return(
     <Container_1a>
       <Div_1a>➕
@@ -27,6 +39,9 @@ export default () => {
       <Input_1a
       type='text'
       placeholder='Adcione uma terefa'
+      value={inputText}
+      onChange={e => setInputText(e.target.value)}
+      onKeyUp={handleKeyUp}
       />
     </Container_1a>
   )

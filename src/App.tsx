@@ -24,8 +24,24 @@ padding-bottom: 20px;
 `
 
 export default () => {
-  const [list, setList] = useState<Item[]>([{id: 1, name: 'Comparar pão', done: false},
-  {id: 2, name: 'Lavar louça ', done: true}]);
+  const [list, setList] = useState<Item[]>([]);
+
+  const handleAddTask = (taskName: string) => {
+    let newList = [...list];
+    newList.push({
+      id: list.length + 1,
+      name: taskName,
+      done: false
+    });
+    setList(newList);
+  }
+
+  const handleCheck = (taskId: number) => {
+    const result = list.findIndex(i => i.id === taskId);
+    if (list[result].done === false) {list[result].done = true}
+    else {list[result].done = false};
+    console.log(list[result])
+  }
 
   return (
     <Container_1a>
@@ -33,9 +49,9 @@ export default () => {
         <Title_1a>
           Lista de Tarefas
         </Title_1a>
-        <Add_area/>
+        <Add_area onEnter={handleAddTask}/>
         {list.map((item, index)=>(
-          <List_item key={index} item={item}/>
+          <List_item key={index} item={item} onCheck={handleCheck}/>
         ))}
       </Container_2a>
     </Container_1a>
