@@ -1,5 +1,9 @@
 # TS - Lista de Tarefas
 
+<p align="center">
+  <img alt="TS - Lista de Tarefas" src="github/preview.png" width="100%">
+</p>
+
 ## 💻 Projeto
 
 O projeto TS - Lista de Tarefas é um web app que permite ao usuário a criação de uma
