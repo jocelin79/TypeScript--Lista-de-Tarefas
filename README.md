@@ -1,7 +1,7 @@
 # TS - Lista de Tarefas
 
 <p align="center">
-  <img alt="TS - Lista de Tarefas" src="github/preview.png" width="100%">
+  <img alt="TS - Lista de Tarefas" src="public/github01.png" width="100%">
 </p>
 
 ## 💻 Projeto
