@@ -19,3 +19,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - ReactJS;
 - TypeScript;
 - Styled-Components.
+
+## 📝 Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
